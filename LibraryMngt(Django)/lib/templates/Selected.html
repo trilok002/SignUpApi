@@ -1,0 +1,383 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Eduaim | Home Course</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="http://html.themewin.com/eduaim-preview/eduaim/images/favicon.ico">
+    <link rel="apple-touch-icon" href="http://html.themewin.com/eduaim-preview/eduaim/images/icon.png' %}">
+    <!-- All css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/slick.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/fakeloader.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icofont.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/jquery.fancybox.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/meanmenu.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/plyr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/animate-headline.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/plugin.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <!-- Modernizer js -->
+    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+</head>
+
+<body>
+
+    <!-- Main wrapper -->
+    <div class="wrapper" id="wrapper">
+           
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-5 col-sm-5 hidden-xs col-12">
+                        <span>Have any query? +123456789</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+           
+        <!-- Header -->
+        <header class="header header-style-1 sticky-header mega-menu-main-wrap common-header-style">
+
+            <div class="container d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-inner">
+                           
+                            <div class="logo default_logo">
+                                <a href="">
+                                    <img src="{% static 'img/logo/niist.png' %}" alt="logo">
+                                </a>
+                            </div>
+                            <div class="logo sticky_logo">
+                                <a href="">
+                                    <img src="{% static 'img/logo/niist.png' %}" alt="Sticky logo">
+                                </a>
+                            </div>
+
+                            <nav class="menu">
+
+                            </nav>
+
+                            <div class="menu-search-area">
+                                <div class="menu-search">
+                                    <div class="search-menu">
+                                        <i class="icofont-search-2" id="toggle-search"></i>
+                                    </div>
+                                </div>
+                                 <div class="search">
+                                    <div class="search-form">
+                                        <form action="{% url 'sea' %}" id="search-form" method="POST">
+                                            {% csrf_token %}
+                                            <input type="search" name="search" placeholder="Book name..">
+                                            <button type="submit">
+                                                <span><i class="icofont-search-2"></i></span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu-wrapper">
+                <div class="container d-block d-lg-none">
+                    <div class="mobile-menu clearfix">
+                        <a class="mobile-logo" href="">
+                            <img src="{% static 'img/logo/logo-sticky.png' %}" alt="mobile logo">
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+
+        </header>
+        <!-- Header -->
+
+        <!-- Breacrumb Area -->
+        <div class="breadcrumb-area" data-black-overlay="7">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1">
+                        <div class="cr-breadcrumb text-center">
+                            <h1>{{ str }}</h1>
+                            <ul>
+                                <li>
+
+                                </li>
+                                <li>{{ str }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Breacrumb Area -->
+
+
+        <!-- Page Content -->
+        <main class="page-content">
+               
+            <!-- posts Area -->
+            <div class="area-padding-large bg-color-white main-blog-area">
+                <div class="container">
+                    <div class="row justify-content-center">
+                       
+                        <!-- Single post -->
+                        {% for i in data %}
+                        <div class="col-lg-4 col-md-6 wow fadeInUp">
+                            <article class="post single-post">
+                                <div class="post-thumb">
+                                    <a href="{% url 'apply' int i.id %}">
+										<img src="{{ i.bimage.url }}" alt="post thumb">
+									</a>
+                                </div>
+                                <div class="post-content">
+                                    <div class="post-meta">
+                                        <span>By:
+											{{ i.bauthor }}
+										</span>
+
+                                    </div>
+                                    <h5>
+                                        <a href="{% url 'apply' int i.id %}">{{ i.bname }}</a>
+                                    </h5>
+
+                                    <P>{{ i.bdetail }}</P>
+                                </div>
+                            </article>
+                        </div>
+                        <!--Single post -->
+                        {% endfor %}
+                        
+
+                        
+                    </div>
+                </div>
+            </div>
+            <!--posts Area -->
+            
+        </main>
+        <!--Page Content -->
+
+
+
+
+        <!-- Quick View Content Start -->
+        <div class="main-product-thumbnail quick-thumb-content">
+            <div class="container">
+                <!-- The Modal -->
+                <div class="modal fade" id="product-window">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body modal-body-common-style">
+                                <div class="row">
+                                    <!-- Main Thumbnail Image Start -->
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-12">
+                                        <!-- Thumbnail Large Image start -->
+                                        <div class="tab-content single-img-thumb">
+                                            <div id="thumb1" class="tab-pane fade show active">
+                                                <a data-fancybox="images" href="{% static 'img/product/1.jpg' %}"><img src="{% static 'img/product/1.jpg' %}" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb2" class="tab-pane fade">
+                                                <a data-fancybox="images" href="{% static 'img/product/2.jpg' %}"><img src="{% static 'img/product/2.jpg' %}" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb3" class="tab-pane fade">
+                                                <a data-fancybox="images" href="{% static 'img/product/3.jpg' %}"><img src="{% static 'img/product/3.jpg' %}" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb4" class="tab-pane fade">
+                                                <a data-fancybox="images" href="{% static 'img/product/4.jpg' %}"><img src="{% static 'img/product/4.jpg' %}" alt="product-view"></a>
+                                            </div>
+                                        </div>
+                                        <!-- Thumbnail Large Image End -->
+                                        <!-- Thumbnail Image End -->
+                                        <div class="modal-product-thumbnail">
+                                            <div class="modal-multiple-item nav" role="tablist">
+                                                <a class="active" data-toggle="tab" href="blog-fullwidth.html#thumb1"><img src="{% static 'img/product/1.jpg' %}" alt="product-thumbnail"></a>
+                                                <a data-toggle="tab" href="blog-fullwidth.html#thumb2"><img src="{% static 'img/product/2.jpg' %}" alt="product-thumbnail"></a>
+                                                <a data-toggle="tab" href="blog-fullwidth.html#thumb3"><img src="{% static 'img/product/3.jpg' %}" alt="product-thumbnail"></a>
+                                                <a data-toggle="tab" href="blog-fullwidth.html#thumb4"><img src="{% static 'img/product/4.jpg' %}" alt="product-thumbnail"></a>
+                                            </div>
+                                        </div>
+                                        <!-- Thumbnail image end -->
+                                    </div>
+                                    <!-- Main Thumbnail Image End -->
+
+                                    <!-- Thumbnail Description Start -->
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-12">
+                                        <div class="thubnail-desc fix">
+                                            <div class="item-content product-details-content">
+                                                <h4>Lorem ipsum dolor sit amet bsicing.</h4>
+                                                <div class="single-item-rating">
+                                                    <div class="spir si-ratting">
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <span>(02)</span>
+                                                    </div>
+                                                    <div class="spir read-review"><a href="blog-fullwidth.html#"><i class="icofont-post_comment"></i>read reviews (1)</a></div>
+                                                    <div class="spir write-review"><a href="blog-fullwidth.html#"><i class="icofont-ui-edit"></i>write review</a></div>
+                                                </div>
+                                                <div class="item-price">
+                                                    <span>$20.00</span>
+                                                    <span><del>$35.00</del></span>
+                                                </div>
+                                                <div class="list-item-des">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum illo distinctio nihil laborum accusantium omnis numquam animi minima, cum neque minus eos! Eius facere atque commodi autem!</p>
+                                                </div>
+
+                                                <div class="item-action">
+
+                                                  <a class="view-plus quick-view" title="Quick View" data-toggle="modal" data-target="#product-window" href="blog-fullwidth.html#"><i class="icofont-ui-zoom-in"></i> </a>
+                                                  <a class="view-cart" title="Add To Cart" href="blog-fullwidth.html#"><i class="icofont-cart"></i></a>
+                                                  <a class="view-reload" href="blog-fullwidth.html#"><i class="icofont-heart-alt"></i></a>
+
+                                                </div>
+                                            </div>
+
+                                            <form action="#">
+                                                <div class="product-info-stock d-flex">
+                                                    Availability:<span>In Stock </span>
+                                                </div>
+
+                                                <div class="product-varient">
+                                                    <div class="commmon_varient product-size">
+                                                        <label>Size</label>
+                                                        <select class="size_varient">
+                                                        <option>S</option>
+                                                        <option>M</option>
+                                                        <option>L</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="commmon_varient product-color">
+                                                        <label>Color</label>
+                                                        <select class="size_varient">
+                                                        <option>White</option>
+                                                        <option>Orange</option>
+                                                        <option>Blue</option>
+                                                        <option>Yellow</option>
+                                                        <option>Pink</option>
+                                                        <option>Black</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="commmon_varient product-meterial clearfix">
+                                                        <label>Meterial</label>
+                                                        <select class="meterial_varient">
+                                                        <option>Plastic</option>
+                                                        <option>Steel</option>
+                                                        <option>Leather</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="quatity-stock">
+                                                    <ul class="d-flex flex-wrap align-items-center">
+                                                       
+                                                        <li class="box-quantity">
+                                                            
+                                                                <input class="aqbw quantity" type="number" min="1" value="1">
+                                                           
+                                                        </li>
+                                                        <li>
+                                                            <a href="blog-fullwidth.html#" title="Add To Cart" class="aqbw default-btn">
+                                                            <i class="icofont-cart"></i><span>add to cart</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="blog-fullwidth.html#" class="aqbw default-btn single-wishlist">
+                                                            <i class="icofont-heart-alt"></i>
+                                                            </a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+                                                
+                                                
+                                      <div class="categories-tags-area">
+                                    <div class="product-tags spcat">
+                                        <label>Tags </label>
+                                        <ul>
+
+                                          <li><a href="blog-fullwidth.html#">Math</a></li>
+
+                                          <li><a href="blog-fullwidth.html#">English</a></li>
+
+                                          <li><a href="blog-fullwidth.html#">Fiber</a></li>
+
+                                          <li><a href="blog-fullwidth.html#">Course</a></li>
+
+                                          <li><a href="blog-fullwidth.html#">Design</a></li>
+
+                                        </ul>
+                                      </div>
+                                   </div> 
+                                                
+                                            </form>
+
+                                            <div class="course-details-social-icons">
+                                                <div class="social-icons color-icon product-dtails-share">
+                                                    <label>Share This Item : </label>
+                                                    <ul>
+                                                        <li class="facebook"><a href="course-details.html#"><i class="icofont-facebook"></i></a></li>
+                                                        <li class="twitter"><a href="course-details.html#/"><i class="icofont-twitter"></i></a></li>
+                                                        <li class="pinterest"><a href="course-details.html#"><i class="icofont-pinterest"></i></a></li>
+                                                        <li class="vimeo"><a href="course-details.html#"><i class="icofont-vimeo"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Thumbnail Description End -->
+                                </div>
+                            </div>
+                            <!-- Modal footer -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quick View Content End -->
+
+
+    </div>
+    <!-- //Main wrapper -->
+
+
+    <!-- All JQuery Files -->
+    <script src="{% static 'js/vendor/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/ytplayer.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
