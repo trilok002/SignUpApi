@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>{{ obj.title }} :-</h2>
+{% if obj.image %}
+<img src="{{ obj.image.url }}" height="100" width="200">
+{% endif %}
+Description - {{ obj.description }}
+</body>
+</html>
