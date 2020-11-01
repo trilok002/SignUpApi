@@ -68,3 +68,13 @@ def mdetail(request,mid):
     d=Module.objects.get(id=mid)
     di={'obj':d}
     return render(request,'Mdetail.html',di)
+
+def signup(request):
+    if request.method=='POST':
+        d=request.POST
+        u=d['u']
+        e=d['e']
+        pa=d['p']
+        User.objects.create_user(username=u,email=e,password=pa)
+        return redirect('login')
+    return render(request,'Signup.html')

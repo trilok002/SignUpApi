@@ -28,5 +28,6 @@ urlpatterns = [
     path('addcorse/<int:sid>',addcourse,name='addcourse'),
     path('modulelist/<int:cid>',modules,name='modules'),
     path('addmodule/<int:cid>',addmodule,name='addmo'),
-    path('mdetail/<int:mid>',mdetail,name='mdetail')
+    path('mdetail/<int:mid>',mdetail,name='mdetail'),
+    path('signup',signup,name='signup')
 ]+static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

@@ -2,8 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
-
 <script>
 function check()
 {var u=document.getElementById("U").value;
@@ -85,17 +83,18 @@ Resources1×0.5×0.25×Rerun
 
 <body >
 <div class="login">
-    <h1>Login</h1>
-    {% if er %}
-    <h3><font color="red"> *incorrect user or password</font></h3>
-    {% endif %}
+    <h1>Register yourself</h1>
     <form method="post">
         {% csrf_token %}
         <input type="text" name="u" placeholder="Username" required="required" />
+
+
+        <input type="email" name="e" placeholder="Email" required="required" />
         <input type="password" name="p" placeholder="Password" required="required" />
-        <button type="submit" class="btn btn-primary btn-block btn-large">Let me in.</button>
-    </form><br>
-    <a href="{% url 'signup' %}"><button>Sign up</button> </a>
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Register</button>
+    </form>
 </div>
 </body>
 
