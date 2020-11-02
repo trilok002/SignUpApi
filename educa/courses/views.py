@@ -32,6 +32,7 @@ def addsub(request):
 def courses(request,sid):
     d=Course.objects.filter(subject=sid)
     sub=Subject.objects.get(id=sid)
+
     dict={'co':d,'sid':sid,'sub':sub}
     return render(request,'clist.html',dict)
 
@@ -40,17 +41,17 @@ def addcourse(request,sid):
         d=request.POST
         na=d['u']
         ov=d['o']
-        u=request.user.username
-        user=User.objects.get(username=u)
+
         sub=Subject.objects.get(id=sid)
-        Course.objects.create(owner=user,subject=sub,title=na,overview=ov)
+        Course.objects.create(subject=sub,title=na,overview=ov)
         return redirect('slist')
     return render(request,'Addcourse.html')
 
 def modules(request,cid):
     d=Module.objects.filter(course=cid)
     cou=Course.objects.get(id=cid)
-    dict={'mo':d,'cid':cid,'cou':cou}
+    user = request.user.username
+    dict={'mo':d,'cid':cid,'cou':cou,'user':user}
     return render(request,'mlist.html',dict)
 
 def addmodule(request,cid):
