@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body><h1><i>Your Cart-</i></h1>
+<table>
+{% for i,j in data %}
+    <tr><td> <img src="{{ i.image.url }}"></td>&nbsp &nbsp<td><h3>{{ i.name }}</h3><h4>Price :{{ i.price }} Rs.</h4>{{ i.description }}</td></tr>
+{% endfor %}
+</table>
+</body>
+</html>

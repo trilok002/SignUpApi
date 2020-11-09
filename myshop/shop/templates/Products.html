@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1><i>{{ cat }}-</i></h1>
+<table>
+{% for i in data %}
+    <tr><td> <img src="{{ i.image.url }}"></td>&nbsp &nbsp<td><h3>{{ i.name }}</h3><h4>Price :{{ i.price }} Rs.</h4>{{ i.description }}</td><td><a href="{% url 'cart' i.id %}"> <button>Add to Cart</button></a></td></tr>
+{% endfor %}
+</table>
+</body>
+</html>

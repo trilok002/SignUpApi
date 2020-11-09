@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>My shop</h2><a href="{% url 'your' %}"> <button>Your Cart</button></a>
+<ul>
+    {% for i in data %}
+    <li><a href="{% url 'product' i.id %}"> <h3><i>{{ i.name }}</i></h3></a></li>
+    {% endfor %}
+</ul>
+</body>
+</html>
