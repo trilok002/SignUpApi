@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+from_email = settings.EMAIL_HOST_USER
+                to_email = user.email
+                sub = "Blog Added"
+                msg = EmailMultiAlternatives(sub, '', from_email, [to_email])
+                dic = {"title": '5690', "des": 'change password'}
+                html = get_template('mail.html').render(dic)
+                msg.attach_alternative(html, 'text/html')
+                msg.send()
