@@ -1,0 +1,924 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    {% load static %}
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>NIIST | Home</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="http://html.themewin.com/eduaim-preview/eduaim/images/favicon.ico">
+    <link rel="apple-touch-icon" href="http://html.themewin.com/eduaim-preview/eduaim/images/icon.png %}">
+    <!-- All css -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/slick.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/fakeloader.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icofont.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/jquery-ui.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/jquery.fancybox.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/nice-select.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/animate.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/meanmenu.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/plyr.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/animate-headline.css' %}">
+    <link rel="stylesheet" href="{% static 'css/assets/plugin.css' %}">
+
+    <link rel="stylesheet" href="{% static 'css/default.css' %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+    <!-- Modernizer js -->
+    <script src="{% static 'js/vendor/modernizr-3.5.0.min.js' %}"></script>
+</head>
+
+<body>
+
+    <!-- Main wrapper -->
+    <div class="wrapper" id="wrapper">
+
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-7 col-md-5 col-sm-5 hidden-xs col-12">
+                        <span>Have any query? +919039023320</span>
+                    </div>
+                    <div class="col-lg-5 col-md-7 col-sm-7 col-xs-12 col-12">
+                        <div class="top-bar-right">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Header -->
+        <header class="header header-style-1 sticky-header mega-menu-main-wrap common-header-style">
+
+            <div class="container d-none d-lg-block">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="header-inner">
+
+                            <div class="logo default_logo">
+
+                                    <img src="{% static 'img/logo/niist.png' %}" alt="logo">
+
+                            </div>
+                            <div class="logo sticky_logo">
+
+                                    <img src="{% static 'img/logo/niist.png' %}" alt="Sticky logo">
+
+                            </div>
+
+                            <nav class="menu" >
+                                <ul>
+                               <p style="font-size:20px">
+                                   <a href="{% url 'selected' 'TECH' '0' %}"><b><font color="green"> TECH </font> &nbsp</b></a>
+
+
+
+                                   <a href="{% url 'selected' 'FICTION' '0' %}"><b><font color="green">FICTION &nbsp</font> </b></a>
+
+
+
+                                   <a href="{% url 'selected' 'BUSINESS' '0' %}"><b><font color="green">BUSINESS &nbsp </font></b></a>
+
+
+
+                                   <a href="{% url 'selected' 'BIOGRAPHY' '0' %}"><b><font color="green">BIOGRAPHY </font> &nbsp</b></a>
+
+
+                                   <a href="{% url 'selected' 'SUSPENSE' '0' %}"><b><font color="green">SUSPENSE</font> &nbsp  </b></a>
+
+
+                                   <a href="{% url 'selected' 'PAGES' '0' %}"><font color="green">Pages</font></a>
+
+                               </p></ul>
+
+                            </nav>
+
+                            <div class="menu-search-area">
+                                <div class="menu-search">
+                                    <div class="search-menu">
+                                        <i class="icofont-search-2" id="toggle-search"></i>
+                                    </div>
+                                </div>
+                                <div class="search">
+                                    <div class="search-form">
+                                        <form action="{% url 'sea' %}" id="search-form" method="POST">
+                                            {% csrf_token %}
+                                            <input type="search" name="search" placeholder="Book name..">
+                                            <button type="submit">
+                                                <span><i class="icofont-search-2"></i></span>
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu -->
+            <div class="mobile-menu-wrapper">
+                <div class="container d-block d-lg-none">
+                    <div class="mobile-menu clearfix">
+
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile Menu -->
+
+        </header>
+        <!-- Header -->
+
+        <!-- Slider -->
+        <div class="slider-area active-slider-def animated-slider-content slider-nav-btn-1 nav-style-2 common-slider-style">
+
+            <!-- Single Slider -->
+            <div class="single-slider image-bg" data-black-overlay="4" style="background: url('{% static 'img/slider/1.jpg' %}')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-12 col-12">
+                            <div class="single-slider-content">
+                               <h3>NIIST </h3>
+                                <h1>LIBRARY Management</h1>
+                                <p>Developed by -Trilok Kumrawat</p>
+                                <div class="slider_btn_box">
+                                    <a href="{% url 'login' %}" class="readmore-btn sgs">Login</a>
+                                    <a href="{% url 'register' %}" class="readmore-btn svc">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Slider -->
+
+            <!-- Single Slider -->
+           <div class="single-slider image-bg" data-black-overlay="5" style="background: url('{% static 'img/slider/2.jpg' %}')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 offset-xl-1 col-lg-12 col-12">
+                            <div class="single-slider-content text-center">
+                                <h3>Your Interest is</h3>
+                                <h1>Here</h1>
+                                <p>Fiction ,Novel ,Biographies ,Technology ,Business ,IT and many more.</p>
+                                <div class="slider_btn_box">
+                                    <a href="{% url 'login' %}" class="readmore-btn sgs">Login</a>
+                                    <a href="{% url 'register' %}" class="readmore-btn svc">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Slider -->
+
+            <!-- Single Slider -->
+            <div class="single-slider image-bg" data-black-overlay="5" style="background: url('{% static 'img/slider/5.jpg' %}')">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-9 col-lg-12 col-12">
+                            <div class="single-slider-content">
+                               <h3>Exploring</h3>
+                                <h1>Innovation</h1>
+                                <p>Best Collection Ever.</p>
+                                <div class="slider_btn_box">
+                                    <a href="{% url 'login' %}" class="readmore-btn sgs">Login</a>
+                                    <a href="{% url 'register' %}" class="readmore-btn svc">Register</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Single Slider -->
+        </div>
+        <!-- Slider -->
+
+        <!-- Main Content -->
+        <main class="page-content">
+
+            <!-- Starting About Area -->
+            <div class="starting-about area-padding-large bg-color-grey">
+                <div class="starting-about-thumb" >
+                    <img class="wow fadeInLeft" src="{% static 'img/about/1.png' %}" alt="about thumb">
+             </div>
+                <div class="container"  >
+                    <div class="row">
+                        <div class="">
+                            <div class="">
+                                <h2>Why Choose NIIST ?</h2>
+                                <p>Library Management of NRI Inst of information science and technology,Bhopal,MP.</p>
+
+                                <div class="lode-more-course wow fadeInUp">
+                                    <a href="" class="readmore-btn">View More Collection <i class="icofont-spinner-alt-3"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+           <!-- Starting About Area -->
+
+            <!-- Course Area -->
+            <div id="course-area" class="posts-area area-padding-bottom-lg area-padding-top-lg bg-color-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-12 offset-0">
+                            <div class="section-title text-center">
+                                <h2>Latest Editions</h2>
+                                <p>your interest is here...</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                    {% for i in data %}
+                        <!-- Single Course-->
+                        <div class="col-lg-3 col-md-4 wow fadeInUp">
+                            <div class="post">
+                                <div class="post-thumb">
+
+                                    <a href="{% url 'login' %}">
+										<img src="{{ i.bimage.url }}" alt="course">
+									</a>
+                                </div>
+                                <div class="post-content">
+                                    <h5>
+                                        <h3>{{ i.bname }}</h3>
+                                    </h5>
+                                    <div class="post-meta">
+
+                                        <span>By:
+											<p>{{ i.bauthor }}</p>
+										</span>
+                                    </div>
+                                    <p>{{ i.bdetail }}</p>
+                                    <div class="single-course-content">
+                                        <div class="single-item-rating">
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <i class="icofont-star"></i>
+                                            <span>(05)</span>
+                                        </div>
+                                        <div class="single-item-course-view">
+                                            <span><i class="icofont icofont-eye"></i>89</span>
+                                            <span><i class="icofont icofont-post_comment"></i>12</span>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single course -->{% endfor %}
+                    </div>
+
+                    <div class="lode-more-course wow fadeInUp text-center">
+                        <a href="{% url 'home' %}" class="readmore-btn">View More Genres <i class="icofont-spinner-alt-3"></i></a>
+                    </div>
+
+                </div>
+            </div>
+            <!--course Area -->
+
+
+            <!-- Measure Area -->
+            <div class="measure-area area-padding-large bg-color-white">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-xl-6">
+                            <div class="single-measure wow zoomIn">
+                                <div class="sm-thumb">
+                                    <img src="{% static 'img/icons/lecture.png' %}" alt="">
+                                </div>
+                                <div class="sm-content">
+                                    <h4>Learn by doing</h4>
+
+                                </div>
+                            </div>
+                            <div class="single-measure wow zoomIn">
+                                <div class="sm-thumb">
+                                    <img src="{% static 'img/icons/notebook.png' %}" alt="">
+                                </div>
+                                <div class="sm-content">
+                                    <h4>Measure progress</h4>
+
+                                </div>
+                            </div>
+                            <div class="single-measure wow zoomIn">
+                                <div class="sm-thumb">
+                                    <img src="{% static 'img/icons/chat.png' %}" alt="">
+                                </div>
+                                <div class="sm-content">
+                                    <h4>Systems Management</h4>
+
+                                </div>
+                            </div>
+                            <div class="single-measure wow zoomIn">
+                                <div class="sm-thumb">
+                                    <img src="{% static 'img/icons/graduate.png' %}" alt="">
+                                </div>
+                                <div class="sm-content">
+                                    <h4>Share with the world</h4>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-xl-6">
+                            <div class="measure-area-thumb">
+                                <img class="wow fadeInRight" src="{% static 'img/about/bg-education.png' %}" alt="area thumb">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Measure Area -->
+
+
+            <!-- online library area start  -->
+
+            <!-- online library area end  -->
+
+
+            <!-- Portfolio Area -->
+            <div class="portfolio-area area-padding-top-lg bg-color-white">
+            <div class="container">
+            <div class="row">
+            <div class="col-xl-8 offset-lg-1 col-12 offset-xl-2 col-lg-10  offset-0">
+                <div class="section-title text-center">
+                    <h2>OUR PORTFOLIO</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, velit.</p>
+                </div>
+            </div>
+            </div>
+            </div>
+                <div class="portfolio-wrap container-fluid">
+                    <!-- Poftfolio Filters -->
+                    <div class="portfolio-filters">
+                        <button class="is-checked" data-filter="*">All</button>
+                        <button data-filter=".book">Book</button>
+                        <button data-filter=".pen">Pen</button>
+                        <button data-filter=".bag">Bag</button>
+                        <button data-filter=".board">Board</button>
+                        <button data-filter=".lamp">Lamp</button>
+                    </div>
+                    <!--Poftfolio Filters -->
+
+                    <!-- Portfolios -->
+                    <div class="row portfolios">
+
+                        <!-- Single Portfolio -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-12 portfolio-single book board bag wow fadeInUp custom_cw">
+                            <div class="portfolio-wraper">
+                                <div class="portfolio">
+                                    <div class="portfoilo-img">
+                                        <img src="{% static 'img/works/1.jpg' %}" alt="portfoilo-img">
+                                    </div>
+                                    <div class="portfolio-icon">
+                                       <a data-fancybox="images" href="{% static 'img/works/1.jpg' %}"><i class="icofont-image"></i></a>
+                                    </div>
+                                </div>
+                                <div class="portfolio-icon-inner text-center">
+                                    <h6>Book, Lamp</h6>
+                                    <h3>
+                                        <a href="">Academic English Course</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Portfolio -->
+
+                        <!-- Single Portfolio -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-12 portfolio-single pen wow lamp fadeInUp custom_cw">
+                            <div class="portfolio-wraper">
+                                <div class="portfolio">
+                                    <div class="portfoilo-img">
+                                        <img src="{% static 'img/works/2.jpg' %}" alt="portfoilo-img">
+                                    </div>
+                                    <div class="portfolio-icon">
+                                       <a data-fancybox="images" href="{% static 'img/works/2.jpg' %}"><i class="icofont-image"></i></a>
+                                    </div>
+                                </div>
+                                <div class="portfolio-icon-inner text-center">
+                                    <h6>Pen, Board</h6>
+                                    <h3>
+                                        <a href="">Online Book Store</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Portfolio -->
+
+                        <!-- Single Portfolio -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-12 portfolio-single book bag wow fadeInUp custom_cw">
+                            <div class="portfolio-wraper">
+                                <div class="portfolio">
+                                    <div class="portfoilo-img">
+                                        <img src="{% static 'img/works/3.jpg' %}" alt="portfoilo-img">
+                                    </div>
+                                    <div class="portfolio-icon">
+                                       <a data-fancybox="images" href="{% static 'img/works/3.jpg' %}"><i class="icofont-image"></i></a>
+                                    </div>
+                                </div>
+                                <div class="portfolio-icon-inner text-center">
+                                    <h6>Lamp, Baord</h6>
+                                    <h3>
+                                        <a href="">Coffe Paper Cup</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Portfolio -->
+
+                        <!-- Single Portfolio -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-12 portfolio-single pen book lamp wow fadeInUp custom_cw">
+                            <div class="portfolio-wraper">
+                                <div class="portfolio">
+                                    <div class="portfoilo-img">
+                                        <img src="{% static 'img/works/4.jpg' %}" alt="portfoilo-img">
+                                    </div>
+                                    <div class="portfolio-icon">
+                                       <a data-fancybox="images" href="{% static 'img/works/4.jpg' %}"><i class="icofont-image"></i></a>
+                                    </div>
+                                </div>
+                                <div class="portfolio-icon-inner text-center">
+                                    <h6>Book, Bag</h6>
+                                    <h3>
+                                        <a href="">Online Pen Store</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Portfolio -->
+
+                        <!-- Single Portfolio -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-12 portfolio-single book wow fadeInUp custom_cw">
+                            <div class="portfolio-wraper">
+                                <div class="portfolio">
+                                    <div class="portfoilo-img">
+                                        <img src="{% static 'img/works/5.jpg' %}" alt="portfoilo-img">
+                                    </div>
+                                    <div class="portfolio-icon">
+                                       <a data-fancybox="images" href="{% static 'img/works/5.jpg' %}"><i class="icofont-image"></i></a>
+                                    </div>
+                                </div>
+                                <div class="portfolio-icon-inner text-center">
+                                    <h6>Book, Lamp</h6>
+                                    <h3>
+                                        <a href="">Best Board Seller</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Portfolio -->
+
+                        <!-- Single Portfolio -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-12 portfolio-single pen bag board wow fadeInUp custom_cw">
+                            <div class="portfolio-wraper">
+                                <div class="portfolio">
+                                    <div class="portfoilo-img">
+                                        <img src="{% static 'img/works/6.jpg' %}" alt="portfoilo-img">
+                                    </div>
+                                    <div class="portfolio-icon">
+                                       <a data-fancybox="images" href="{% static 'img/works/6.jpg' %}"><i class="icofont-image"></i></a>
+                                    </div>
+                                </div>
+                                <div class="portfolio-icon-inner text-center">
+                                    <h6>Pen, Bag</h6>
+                                    <h3>
+                                        <a href="">Lorem ipsum dolor</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Portfolio -->
+
+                        <!-- Single Portfolio -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-12 portfolio-single book wow board lamp fadeInUp custom_cw">
+                            <div class="portfolio-wraper">
+                                <div class="portfolio">
+                                    <div class="portfoilo-img">
+                                        <img src="{% static 'img/works/7.jpg' %}" alt="portfoilo-img">
+                                    </div>
+                                    <div class="portfolio-icon">
+                                       <a data-fancybox="images" href="{% static 'img/works/7.jpg' %}"><i class="icofont-image"></i></a>
+                                    </div>
+                                </div>
+                                <div class="portfolio-icon-inner text-center">
+                                    <h6>Pen, Bag</h6>
+                                    <h3>
+                                        <a href="">Mixed Book Shop</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Portfolio -->
+
+                        <!-- Single Portfolio -->
+                        <div class="col-xl-3 col-lg-6 col-md-6 col-12 portfolio-single pen bag wow fadeInUp custom_cw">
+                            <div class="portfolio-wraper">
+                                <div class="portfolio">
+                                    <div class="portfoilo-img">
+                                        <img src="{% static 'img/works/8.jpg' %}" alt="portfoilo-img">
+                                    </div>
+                                    <div class="portfolio-icon">
+                                       <a data-fancybox="images" href="{% static 'img/works/8.jpg' %}"><i class="icofont-image"></i></a>
+                                    </div>
+                                </div>
+                                <div class="portfolio-icon-inner text-center">
+                                    <h6>Lamp, Bag</h6>
+                                    <h3>
+                                        <a href="">Lorem ipsum dolor.</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <!--Single Portfolio -->
+
+                    </div>
+                    <!--Portfolios -->
+                </div>
+            </div>
+            <!--Portfolio Area -->
+
+
+           <!--social design arae start-->
+			<div class="link_area">
+				<div class="container">
+					<div class="row">
+
+					</div>
+				</div>
+			</div>
+			<!--social design arae end-->
+
+        </main>
+        <!-- Page Content -->
+
+        <!-- Footer Area -->
+        <footer id="footer" class="footer-area subscribe-footer-bottom pb-footer">
+
+            <!-- Footer Top Area -->
+            <div class="footer-top-area div-padding-sm">
+                <div class="container">
+                    <div class="great-blowing widgets">
+                        <div class="row">
+
+                            <div class="col-lg-3 col-md-4 col-12 custom_cw">
+                                <!-- footer Widget -->
+                                <div class="single-widget footer-about">
+                                    <a href="">
+                                        <img src="{% static 'img/logo/niist.png' %}" alt="footer logo">
+                                    </a>
+                                    <p>long established fact that a reader will be attracted by the readable content by the readable content established fact that</p>
+
+
+
+                                </div>
+                                <!--footer Widget -->
+                            </div>
+
+                            <div class="col-lg-2 col-md-4 col-12 custom_cw">
+                                <!-- footer Widget -->
+                                <div class="single-widget footer-menu sister-concern">
+                                    <h5 class="footer-widget-title">Concern</h5>
+
+                                </div>
+                                <!--footer Widget -->
+                            </div>
+
+                            <div class="col-lg-2 col-md-4 col-12 custom_cw">
+                                <!-- footer Widget -->
+                                <div class="single-widget footer-menu quick-link">
+                                    <h5 class="footer-widget-title">QUICK LINK</h5>
+
+                                </div>
+                                <!--footer Widget -->
+                            </div>
+
+							<div class="col-lg-2 col-md-4 col-12 custom_cw">
+                                <!-- footer Widget -->
+                                <div class="single-widget footer-menu support">
+                                    <h5 class="footer-widget-title">Support</h5>
+
+                                </div>
+                                <!--footer Widget -->
+                            </div>
+
+                            <div class="col-lg-3 col-md-6 col-12">
+                                <!-- footer Widget -->
+                                <div class="single-widget instgram">
+                                    <h5 class="footer-widget-title">Instgram</h5>
+                                    <ul>
+                                        <li><a href=""><img src="{% static 'img/instgram/1.jpg' %}" alt=""> </a></li>
+                                        <li><a href=""><img src="{% static 'img/instgram/2.jpg' %}" alt=""> </a></li>
+                                        <li><a href=""><img src="{% static 'img/instgram/3.jpg' %}" alt=""> </a></li>
+                                        <li><a href=""><img src="{% static 'img/instgram/4.jpg' %}" alt=""> </a></li>
+                                        <li><a href=""><img src="{% static 'img/instgram/5.jpg' %}" alt=""> </a></li>
+                                        <li><a href=""><img src="{% static 'img/instgram/6.jpg' %}" alt=""> </a></li>
+                                    </ul>
+                                </div>
+                                <!--footer Widget -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Footer Top Area -->
+
+            <!-- Footer Bottom Area -->
+            <div class="footer-bottom-area">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <p class="footer-copyright fc-left">Copyright &copy;
+                                <a href=""></a> 2020. All Right Reserved</p>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-12">
+                            <p class="footer-copyright">Powerd By &copy;
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Footer Bottom Area -->
+
+        </footer>
+        <!-- //Footer Area -->
+
+        <!-- Subscribe Area  Start-->
+        <div class="subscribe-action-area footer-bottom">
+            <div class="container">
+
+                <div class="row">
+                   <div class="col-xl-8 offset-xl-2 col-lg-10 offset-lg-1 col-12 offset-0">
+                        <div class="section-title text-center">
+                            <h2>Subscribe Our Newsletter</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-8 offset-xl-2 col-12">
+                        <div class="subscribe-action">
+                            <div class="subscribe-action-inner">
+                                <form action="#" id="sb_form" class="sb_form footer-newsletter">
+                                    <div class="subscribe-form">
+                                        <input id="sb_email" type="email" name="email" placeholder="Enter your email...">
+                                        <button class="default-btn" id="sb_submit" type="submit">SUBSCRIBE</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+
+                        <div class="widgets">
+                            <div class="sidebar-social footer-social">
+                                <div class="social-icons color-icon">
+                                    <ul>
+                                        <li class="facebook">
+                                            <a href="index.html#">
+                                                <i class="icofont-facebook"></i>
+                                            </a>
+                                        </li>
+                                        <li class="twitter">
+                                            <a href="index.html#">
+                                                <i class="icofont-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li class="pinterest">
+                                            <a href="index.html#">
+                                                <i class="icofont-pinterest"></i>
+                                            </a>
+                                        </li>
+                                        <li class="vimeo">
+                                            <a href="index.html#">
+                                                <i class="icofont-vimeo"></i>
+                                            </a>
+                                        </li>
+
+                                        <li class="pinterest">
+                                            <a href="index.html#">
+                                                <i class="icofont-google-plus"></i>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Subscribe Area  End-->
+
+        <!-- Quick View Content Start -->
+        <div class="main-product-thumbnail quick-thumb-content">
+            <div class="container">
+                <!-- The Modal -->
+                <div class="modal fade" id="product-window">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <!-- Modal Header -->
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                            </div>
+                            <!-- Modal body -->
+                            <div class="modal-body modal-body-common-style">
+                                <div class="row">
+                                    <!-- Main Thumbnail Image Start -->
+                                    <div class="col-lg-5 col-md-5 col-sm-5 col-12">
+                                        <!-- Thumbnail Large Image start -->
+                                        <div class="tab-content single-img-thumb">
+                                            <div id="thumb1" class="tab-pane fade show active">
+                                                <a data-fancybox="images" href="{% static 'img/product/1.jpg' %}"><img src="{% static 'img/product/1.jpg' %}" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb2" class="tab-pane fade">
+                                                <a data-fancybox="images" href="{% static 'img/product/2.jpg' %}"><img src="{% static 'img/product/2.jpg' %}" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb3" class="tab-pane fade">
+                                                <a data-fancybox="images" href="{% static 'img/product/3.jpg' %}"><img src="{% static 'img/product/3.jpg' %}" alt="product-view"></a>
+                                            </div>
+                                            <div id="thumb4" class="tab-pane fade">
+                                                <a data-fancybox="images" href="{% static 'img/product/4.jpg' %}"><img src="{% static 'img/product/4.jpg' %}" alt="product-view"></a>
+                                            </div>
+                                        </div>
+                                        <!-- Thumbnail Large Image End -->
+                                        <!-- Thumbnail Image End -->
+                                        <div class="modal-product-thumbnail">
+                                            <div class="modal-multiple-item nav" role="tablist">
+                                                <a class="active" data-toggle="tab" href="index.html#thumb1"><img src="{% static 'img/product/1.jpg' %}" alt="product-thumbnail"></a>
+                                                <a data-toggle="tab" href="index.html#thumb2"><img src="{% static 'img/product/2.jpg' %}" alt="product-thumbnail"></a>
+                                                <a data-toggle="tab" href="index.html#thumb3"><img src="{% static 'img/product/3.jpg' %}" alt="product-thumbnail"></a>
+                                                <a data-toggle="tab" href="index.html#thumb4"><img src="{% static 'img/product/4.jpg' %}" alt="product-thumbnail"></a>
+                                            </div>
+                                        </div>
+                                        <!-- Thumbnail image end -->
+                                    </div>
+                                    <!-- Main Thumbnail Image End -->
+
+                                    <!-- Thumbnail Description Start -->
+                                    <div class="col-lg-7 col-md-7 col-sm-7 col-12">
+                                        <div class="thubnail-desc fix">
+                                            <div class="item-content product-details-content">
+                                                <h4>Lorem ipsum dolor sit amet bsicing.</h4>
+                                                <div class="single-item-rating">
+                                                    <div class="spir si-ratting">
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <i class="icofont-star"></i>
+                                                        <span>(02)</span>
+                                                    </div>
+                                                    <div class="spir read-review"><a href="index.html#"><i class="icofont-post_comment"></i>read reviews (1)</a></div>
+                                                    <div class="spir write-review"><a href="index.html#"><i class="icofont-ui-edit"></i>write review</a></div>
+                                                </div>
+                                                <div class="item-price">
+                                                    <span>$20.00</span>
+                                                    <span><del>$35.00</del></span>
+                                                </div>
+                                                <div class="list-item-des">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex eum illo distinctio nihil laborum accusantium omnis numquam animi minima, cum neque minus eos! Eius facere atque commodi autem!</p>
+                                                </div>
+
+                                                <div class="item-action">
+
+                                                  <a class="view-plus quick-view" title="Quick View" data-toggle="modal" data-target="#product-window" href="index.html#"><i class="icofont-ui-zoom-in"></i> </a>
+                                                  <a class="view-cart" title="Add To Cart" href="index.html#"><i class="icofont-cart"></i></a>
+                                                  <a class="view-reload" href="index.html#"><i class="icofont-heart-alt"></i></a>
+
+                                                </div>
+                                            </div>
+
+                                            <form action="#">
+                                                <div class="product-info-stock d-flex">
+                                                    Availability:<span>In Stock </span>
+                                                </div>
+
+                                                <div class="product-varient">
+                                                    <div class="commmon_varient product-size">
+                                                        <label>Size</label>
+                                                        <select class="size_varient">
+                                                        <option>S</option>
+                                                        <option>M</option>
+                                                        <option>L</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="commmon_varient product-color">
+                                                        <label>Color</label>
+                                                        <select class="size_varient">
+                                                        <option>White</option>
+                                                        <option>Orange</option>
+                                                        <option>Blue</option>
+                                                        <option>Yellow</option>
+                                                        <option>Pink</option>
+                                                        <option>Black</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="commmon_varient product-meterial clearfix">
+                                                        <label>Meterial</label>
+                                                        <select class="meterial_varient">
+                                                        <option>Plastic</option>
+                                                        <option>Steel</option>
+                                                        <option>Leather</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+
+                                                <div class="quatity-stock">
+                                                    <ul class="d-flex flex-wrap align-items-center">
+
+                                                        <li class="box-quantity">
+
+                                                                <input class="aqbw quantity" type="number" min="1" value="1">
+
+                                                        </li>
+                                                        <li>
+                                                            <a href="index.html#" title="Add To Cart" class="aqbw default-btn">
+                                                            <i class="icofont-cart"></i><span>add to cart</span>
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index.html#" class="aqbw default-btn single-wishlist">
+                                                            <i class="icofont-heart-alt"></i>
+                                                            </a>
+                                                        </li>
+
+                                                    </ul>
+                                                </div>
+
+
+                                      <div class="categories-tags-area">
+                                    <div class="product-tags spcat">
+                                        <label>Tags </label>
+                                        <ul>
+
+                                          <li><a href="index.html#">Math</a></li>
+
+                                          <li><a href="index.html#">English</a></li>
+
+                                          <li><a href="index.html#">Fiber</a></li>
+
+                                          <li><a href="index.html#">Course</a></li>
+
+                                          <li><a href="index.html#">Design</a></li>
+
+                                        </ul>
+                                      </div>
+                                   </div>
+
+                                            </form>
+
+                                            <div class="course-details-social-icons">
+                                                <div class="social-icons color-icon product-dtails-share">
+                                                    <label>Share This Item : </label>
+                                                    <ul>
+                                                        <li class="facebook"><a href="course-details.html#"><i class="icofont-facebook"></i></a></li>
+                                                        <li class="twitter"><a href="course-details.html#/"><i class="icofont-twitter"></i></a></li>
+                                                        <li class="pinterest"><a href="course-details.html#"><i class="icofont-pinterest"></i></a></li>
+                                                        <li class="vimeo"><a href="course-details.html#"><i class="icofont-vimeo"></i></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Thumbnail Description End -->
+                                </div>
+                            </div>
+                            <!-- Modal footer -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Quick View Content End -->
+
+    </div>
+    <!-- //Main wrapper -->
+
+
+    <!-- All JQuery Files -->
+    <script src="{% static 'js/vendor/jquery-3.2.1.min.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/ytplayer.min.js' %}"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>
