@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1><font color="blue"><i>Dashboard</i></font> </h1>
+Welcome -{{ request.user.username }}<br>
+{% if obj.image %}
+<img src="{{ obj.image.url }}" height="200" width="300">
+{% else %}
+no image
+{% endif %}
+<br>
+
+{% if obj.dob %}
+{{ obj.dob }}
+{% else %}
+no dob
+{% endif %}
+<hr><a href="{% url 'update' %}"><button>Update image</button></a>
+<a href="{% url 'logout' %}"><button>Logout</button></a>
+</body>
+</html>

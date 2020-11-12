@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2>Change Password</h2>
+<h3><i><font color="red">{{ err }}</font> </i></h3>
+<form method="post" action="{% url 'cpass' email %}">
+    {% csrf_token %}
+   new Password : <input class="c" type="password"  name="p" id="em"><br><br>
+    again :   <input class="c" type="password"  name="cp" ><hr>
+    <i></i>
+    <input type="submit" name="Submit" onclick="get()" >
+
+</form>
+</body>
+</html>
