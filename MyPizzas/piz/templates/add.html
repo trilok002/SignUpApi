@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Create New Pizza-</h1>
+<form method="post">
+    {% csrf_token %}
+    <h2>Select type :  </h2>
+    <select name="type">
+        <option value="Regular">Regular</option>
+        <option value="Square">Square</option>
+    </select><br>
+    <h2>Select Size   :  </h2>
+    <select name="size">
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+    </select><br>
+    <h2>Toppings :   </h2>
+    <input type="checkbox" name="t1" value="Onion" >Onion <br>
+    <input type="checkbox" name="t1" value="Tomato">Tomato <br>
+    <input type="checkbox" name="t1" value="Corn">Corn <br>
+    <input type="checkbox" name="t1" value="Capsicum">Capsicum <br>
+    <input type="checkbox" name="t1" value="Cheese">Cheese <br>
+    <input type="checkbox" name="t1" value="Jalapano">Jalapano <br><br>
+    <input type="submit" value="Create pizza">
+</form>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h2><i>All stored pizzas--</i></h2><br>
+<p align="right"> <b>GET - </b>
+    <a href="{% url 'sf' 'Small' %}"><button>Small</button></a>
+    <a href="{% url 'sf' 'Medium' %}"><button> Medium</button></a>
+    <a href="{% url 'sf' 'Large' %}"><button> Large</button></a></p>
+
+{% for i in data %}
+<h2>P{{ i.id }}</h2>
+Type : {{ i.type }}<br>
+Size : {{ i.size }}<br>
+Toppings : {{ i.toppings }}<br><br>
+<button><a href="{% url 'del' i.id %}">Delete</a></button><br>
+<button><a href="{% url 'edit' i.id %}">Edit</a></button><br>
+
+{% endfor %}
+<hr><br>
+<button><h3><a href="{% url 'add' %}">Create new one.</a></h3></button>
+</body>
+</html>
