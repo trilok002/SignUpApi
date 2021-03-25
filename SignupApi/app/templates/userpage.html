@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1 style="color:blue">Welcome</h1>
+{% if user %}
+<h2>Username : {{ user.username }}<br>Name :{{ user.first_name }} {{ user.last_name }}<br>Email : {{ user.email }}<br>Desig. : {{ desig }}</h2>
+{% endif %}<br>
+<button><a href="{% url 'logout' %}"><h4>Logout</h4></a> </button><hr>
+{% if list %}
+<h2>__{{ cat }}__</h2><br>
+
+ <ul>{% for i in auser %}
+     <li> {{ i.user.username }} - - {{ i.user.email }} </li>
+{% endfor %}
+</ul>
+<button><a href="{% url 'add' cat %}"><h4>Add New</h4></a> </button><br><br>
+{% endif %}
+
+
+</body>
+</html>
